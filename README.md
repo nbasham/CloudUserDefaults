@@ -33,7 +33,7 @@ import CloudUserDefaults
 let cloudUserDefaults = CloudUserDefaults()
 cloudUserDefaults.start(prefix: "cloud_")
 ```
-Whenever a `UserDefaults` **key** starts with `cloud_` it is automatically synced to all the user's devices e.g.
+That's it, whenever a `UserDefaults` **key** starts with `cloud_` it is automatically synced to all the user's devices e.g.
 ```swift
 UserDefaults.standard.set(42, forKey: "cloud_answer") // synced to cloud
 UserDefaults.standard.set(42, forKey: "answer")       // local

@@ -5,6 +5,8 @@ open class CloudUserDefaults {
     public static let cloudSyncNotification = Notification.Name("CloudSyncNotification")
     internal var prefix: String!
 
+    public init() {}
+
     public func start(prefix: String) {
         self.prefix = prefix
         NotificationCenter.default.addObserver(self, selector: #selector(notificationFromCloud(notification:)), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: nil)
