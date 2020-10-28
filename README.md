@@ -1,8 +1,8 @@
 # About
 
-CloudUserDefaults automatically syncs `UserDefaults` **values** that use a **key** with a specified prefix to the cloud. Behind the scenes it listens to system events and when a `UserDefaults` **key** with the given prefix is set all the user's devices are automatically synced with the new value. For example, if you choose ***cloud_*** as the prefix `UserDefaults.standard.set(1, forKey: "cloud_count")` is set on all the user's devices.
+CloudUserDefaults automatically syncs `UserDefaults` **values** that use a **key** with a specified prefix to the cloud. Silently listening to system events it detects when a `UserDefaults` **key** with a given prefix is changed and automatically syncs the **value**. For example, if you choose ***cloud_*** as the prefix `UserDefaults.standard.set(1, forKey: "cloud_count")` is set on all the user's devices.
 
-This is based on Mugunth Kumar's elegant solution `MKiCloudSync` an Objective-C [GitHub repository](https://github.com/MugunthKumar/MKiCloudSync) that is now archived. Thanks to Paul Hudson for suggesting `MKiCloudSync`.
+This is based on Mugunth Kumar's elegant solution `MKiCloudSync` an Objective-C [GitHub repository](https://github.com/MugunthKumar/MKiCloudSync) that is now archived. Thanks to [Paul Hudson for the introduction to `MKiCloudSync`](https://www.hackingwithswift.com/example-code/system/how-to-store-userdefaults-options-in-icloud).
 
 ## Installation
 
@@ -21,7 +21,7 @@ https://github.com/nbasham/CloudUserDefaults.git
 Copy `CloudUserDefaults.swift` to your project
 
 ## Setup
-In Xcode, select your project, select your target, click `Signing & Capabilities`, click `+ Capability`, select iCloud. Check the `Key-value storage` checkbox.
+In Xcode, click your project, click your target, click `Signing & Capabilities`, click `+ Capability`, select iCloud. Check the `Key-value storage` checkbox.
 
 **NOTE** iCloud events are not sent to the simulator.
 
@@ -53,5 +53,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
 
 
