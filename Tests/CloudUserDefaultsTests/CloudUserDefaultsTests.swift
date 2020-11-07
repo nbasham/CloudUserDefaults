@@ -46,5 +46,6 @@ final class CloudUserDefaultsTests: XCTestCase {
     static var allTests = [
         ("testStart", testStart),
         ("testNotificationFromCloud", testNotificationFromCloud),
+        ("testNotifyCloud", testNotifyCloud)
     ]
 }
