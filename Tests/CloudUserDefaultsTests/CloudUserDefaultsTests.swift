@@ -2,7 +2,6 @@ import XCTest
 @testable import CloudUserDefaults
 
 final class CloudUserDefaultsTests: XCTestCase {
-
     private let prefix = "cloud_"
     private let testKey = "test_key"
     private let testCloudKey = "cloud_test_key"
@@ -23,8 +22,6 @@ final class CloudUserDefaultsTests: XCTestCase {
     func testNotificationFromCloud() {
         let cloudUserDefaults = CloudUserDefaults()
         cloudUserDefaults.start(prefix: prefix)
-
-        //  Check that CloudUserDefaults.cloudSyncNotification is sent
         let _ = expectation(forNotification: CloudUserDefaults.cloudSyncNotification, object: nil, handler: nil)
         cloudUserDefaults.notificationFromCloud(notification: unusedNotification)
         waitForExpectations(timeout: 1, handler: nil)
@@ -35,8 +32,6 @@ final class CloudUserDefaultsTests: XCTestCase {
         cloudUserDefaults.start(prefix: prefix)
         UserDefaults.standard.set(testValue, forKey: testKey)
         UserDefaults.standard.set(testValue, forKey: testCloudKey)
-
-        //  Check that values are set in expected stores
         XCTAssertNil(NSUbiquitousKeyValueStore.default.object(forKey: testKey))
         XCTAssertNotNil(UserDefaults.standard.object(forKey: testKey))
         XCTAssertNotNil(NSUbiquitousKeyValueStore.default.object(forKey: testCloudKey))
