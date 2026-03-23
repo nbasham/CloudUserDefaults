@@ -10,6 +10,7 @@ import Foundation
 /// let cloudUserDefaults = CloudUserDefaults()
 /// cloudUserDefaults.start(prefix: "cloud_")
 /// ```
+@available(watchOS 9.0, *)
 open class CloudUserDefaults {
 
     /// Posted when values have been received from iCloud.

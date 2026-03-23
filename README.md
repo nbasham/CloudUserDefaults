@@ -23,6 +23,8 @@ In Xcode, click your project, click your target, click `Signing & Capabilities`,
 
 **NOTE** iCloud events are not sent to the simulator.
 
+**NOTE** On watchOS, `NSUbiquitousKeyValueStore` is not available prior to watchOS 9.0.
+
 ## Usage
 Create an instance of `CloudUserDefaults` somewhere it will stay in scope and call `start` with a prefix of your choosing.
 
